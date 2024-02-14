@@ -1,0 +1,352 @@
+/* Importerar externt google font typsnitt, Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+/* Tar bort all margin och padding samt sätter box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sätter storlek på typsnitt i roten */
+html {
+    font-size: 62.5%;
+}
+
+/* Typsnitt, storlek och bakgrundfärg för allt inom bodyn */
+body {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    font-family: 'Poppins', Helvetica, Arial, sans-serif;
+    background-color: #F9F7F6;
+    color: #404040;
+    position: relative;
+}
+
+/* Sätter alla bilder till 100 % storlek */
+img {
+    width: 100%;
+}
+
+/* Meny/navigering för datorvy, fixerad position */
+#computernav {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5px 0;
+    width: 100%;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.70);
+    z-index: 3;
+}
+
+/* Allt inom main visas i flex */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: auto;
+    align-content: center;
+    align-items: flex-start;
+    width: 80%;
+}
+
+/* Styling för länkar i meny/nav */
+nav a {
+    text-decoration: none;
+    color: #404040;
+    font-weight: bold;
+    padding-left: 23px;
+}
+
+/* Hover-färg på nav-länkar samt aktiv sida */
+nav a:hover,
+nav a:active {
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+    color: #404040;
+    text-decoration-color: #404040;
+}
+
+/* Styling för aktiv sida i nav */
+#active {
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+    color: #404040;
+    text-decoration-color: #404040;
+}
+
+/* Padding för grupp av menylänkar */
+#navlinks {
+    padding-top: 20px;
+    padding-right: 20px;
+    display: flex;
+}
+
+/* Maxhöjd för logotyp */
+#logo {
+    max-height: 60px;
+    object-fit: cover;
+}
+
+/* Maxhöjd för header-bild */
+#headerimg {
+    max-height: 600px;
+    object-fit: cover;
+}
+
+/* Maxbredd för sektioner */
+section {
+    max-width: 55ch;
+}
+
+/* Margin för paragrafer i sektioner */
+section p {
+    margin: 2.2rem auto;
+}
+
+/* Styling för rubriker */
+h1 {
+    font-size: 4rem;
+    color: #404040;
+    font-weight: bold;
+    text-align: center;
+    margin: 6rem auto 0;
+    line-height: 5.2rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+    color: #404040;
+    font-weight: 600;
+    margin: 6rem auto 0;
+    line-height: 4rem;
+}
+
+h3 {
+    font-size: 2.2rem;
+    color: #404040;
+    font-weight: 600;
+    margin: 4rem auto 0;
+    line-height: 3.4rem;
+}
+
+/* Padding för listor */
+ul {
+    padding: 0 40px;
+}
+
+/* Styling för ingress */
+#ingress {
+    font-weight: 600;
+}
+
+/* Styling för citat */
+blockquote {
+    font-size: 2.2rem;
+    line-height: 3.6rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #404040;
+}
+
+blockquote p {
+    margin: 2.5% 0 0 16%;
+}
+
+/* Citattecken innan citat */
+blockquote::before {
+    content: '\201E';
+    font-size: 9em;
+    color: #C75200;
+    margin-right: 0.2em;
+}
+
+/* Footer till citat */
+#author {
+    background-color: #F9F7F6;
+    color: #404040;
+    font-style: italic;
+    width: 100%;
+    margin: auto;
+}
+
+/* Döljer mobil-meny */
+.menubtn,
+#mobilenav {
+    display: none;
+}
+
+/* Klass för opacitet när mobilmeny öppnas (JS) */
+.opacity {
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styling för footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #404040;
+    color: white;
+    padding: 1.6rem;
+    line-height: 2.6rem;
+    font-size: 1.4rem;
+    margin-top: 5%;
+}
+
+/* Styling för skärmar mindre än 1024px */
+@media screen and (max-width: 1024px) {
+
+    /* Döljer menylänkar i nav */
+    #navlinks {
+        display: none;
+    }
+
+    /* Ändrar färg */
+    #computernav {
+        background-color: #404040;
+    }
+
+    /* Styling av mobilmeny */
+    #mobilenav {
+        background-color: #404040;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.70);
+        position: fixed;
+        right: 0;
+        top: 77px;
+        height: 100vh;
+        width: 30%;
+        display: none;
+        z-index: 2;
+    }
+
+    /* Styling för o-ordnad lista i mobilmeny */
+    #mobilenav ul {
+        margin-top: 20%;
+        width: 100%;
+        list-style-type: none;
+        text-align: center;
+        padding: 0;
+    }
+
+    /* Styling för listobjekt i mobilmeny */
+    #mobilenav li {
+        padding: 1rem 0;
+        width: 100%;
+    }
+
+    /* Styling för länkar i mobilmeny */
+    #mobilenav a {
+        color: white;
+        text-decoration: none;
+        padding: 0 1em;
+    }
+
+    #mobilenav a:hover,
+    #mobilenav a:active {
+        text-decoration: underline;
+        text-underline-offset: 0.5rem;
+        color: white;
+        text-decoration-color: white;
+    }
+
+    #mobileactive {
+        text-decoration: underline !important;
+        text-underline-offset: 0.5rem !important;
+        color: white !important;
+        text-decoration-color: white !important;
+    }
+
+    /* Styling för mobilknapp */
+    .menubtn {
+        display: flex;
+        position: fixed;
+        top: 1%;
+        right: 1%;
+        margin: 2%;
+        border: none;
+        background-color: #404040;
+        align-items: center;
+        padding: 5px 15px 5px 10px;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    /* Styling för menytext */
+    #menutext {
+        margin-left: 10%;
+        line-height: 2.5rem;
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+    }
+
+    /* Hamburgermeny bestående av tre linjer, förändras under 0.4 sekunder */
+    #line1,
+    #line2,
+    #line3 {
+        width: 22px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.4s;
+        display: block;
+    }
+
+    /* Ändrar position och rotrar första linjen -45 grader genom klassen cross (JS) */
+    .cross #line1 {
+        transform: translate(0, 8px) rotate(-45deg);
+    }
+
+    /* Fadear ut mitten-linjen i hamburgermenyn genom klassen cross (JS) */
+    .cross #line2 {
+        opacity: 0;
+    }
+
+    /* Ändrar position och rotrar tredje linjen 45 grader genom klassen cross (JS) */
+    .cross #line3 {
+        transform: translate(0, -8px) rotate(45deg);
+    }
+}
+
+/* Styling för skärmar mindre än 600px */
+@media screen and (max-width: 600px) {
+
+    /* Ökar storlek på bredd av mobilmeny */
+    #mobilenav {
+        width: 50vw;
+    }
+
+    /* Minskar storlek */
+    h1 {
+        font-size: 3.5rem;
+        line-height: 4.2rem;
+    }
+
+    /* Minskar citattecknets storlek */
+    blockquote::before {
+        font-size: 6em;
+    }
+
+    /* Ändrar marginaler */
+    blockquote p {
+        margin: 5% 0 0 25%;
+    }
+
+    /* Centerar text och ökar marginal till topp */
+    footer {
+        text-align: center;
+        margin-top: 10%;
+    }
+}
